@@ -4,12 +4,12 @@ import { useState } from "react";
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([
-    { id: 1, title: "tarea 1", description: "descripcion 1", completed: false },
-    { id: 2, title: "tarea 2", description: "descripcion 2", completed: false },
+    { id: 1, title: "Terminar Diseño", description: "Elegir colores para el header", completed: false },
+    { id: 2, title: "Subir repositorio", description: "subir cambios al repositorio remoto", completed: true },
   ]);
 
   return (
-    <div className="text-bg-success p-3">
+    <div className="p-3">
       <TaskForm />
       <div>
         {
