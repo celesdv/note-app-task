@@ -14,27 +14,37 @@ const Task = ({
     <div
       className={
         completed
-          ? "completed d-flex p-2 border border-secondary rounded mb-2"
-          : "d-flex p-2 border border-secondary rounded mb-2"
+          ? "bg-secondary opacity-50 d-flex p-2 m-2 border rounded shadow "
+          : "d-flex p-2 m-2 border rounded shadow "
       }
     >
       <Button
-        variant="success"
-        className="m-2"
+        variant={completed ? "dark" : "success"}
+        className="m-2 shadow"
         onClick={() => completeTask(id)}
       >
         {completed ? <BsCheckLg /> : <BsExclamationLg />}
       </Button>
-      <div className="w-100 align-self-center pt-2">
-        <div className={completed ? "cross-out" : ""}>
-          <h3 className="text-primary">{title}</h3>
-          <span className="badge bg-primary text-wrap">ID: {id}</span>
-          <p>{description}</p>
-        </div>
+      <div
+        className={
+          completed
+            ? "cross-out w-100 align-self-center pt-2"
+            : "w-100 align-self-center pt-2"
+        }
+      >
+        <h3 className={completed ? "text-light" : "text-primary"}>{title}</h3>
+        <span
+          className={
+            completed ? "badge bg-dark text-wrap" : "badge bg-primary text-wrap"
+          }
+        >
+          ID: {id}
+        </span>
+        <p>{description}</p>
       </div>
       <Button
-        variant="danger"
-        className="m-2"
+        variant={completed ? "dark" : "danger"}
+        className="m-2 shadow"
         onClick={() => deleteTask(id)}
       >
         <BsXLg />

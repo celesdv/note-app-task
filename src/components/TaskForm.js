@@ -32,21 +32,21 @@ const TaskForm = ({ saveTask }) => {
 
   return (
     <Form className="d-flex flex-row mb-2" onSubmit={handleSubmit}>
-      <Form.Group className="w-50 me-1" controlId="title">
+      <Form.Group className="w-50 m-2 shadow" controlId="title">
         <Form.Control
           type="text"
           placeholder="Add a new Task"
           onChange={handleChangeTitle}
         />
       </Form.Group>
-      <Form.Group className="w-50 me-1" controlId="description">
+      <Form.Group className="w-50 m-2 shadow" controlId="description">
         <Form.Control
           type="text"
           placeholder="Add a description"
           onChange={handleChangeDescription}
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="shadow m-2">
         <BsPlusLg />
       </Button>
     </Form>
