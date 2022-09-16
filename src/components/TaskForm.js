@@ -1,46 +1,53 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { BsPlusLg } from "react-icons/bs";
 
-const TaskForm = () => {
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
+const TaskForm = ({ saveTask }) => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
-  const onSubmit = (data) => console.log(data);
+  const handleChangeTitle = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const handleChangeDescription = (e) => {
+    setDescription(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newTask = {
+      id: uuidv4(),
+      title: title,
+      description: description,
+      completed: false,
+    };
+    saveTask(newTask);
+    e.target.reset();
+    setTitle("");
+    setDescription("");
+  };
 
   return (
-    <Form className="d-flex flex-row" onSubmit={handleSubmit(onSubmit)}>
+    <Form className="d-flex flex-row mb-2" onSubmit={handleSubmit}>
       <Form.Group className="w-50 me-1" controlId="title">
         <Form.Control
           type="text"
           placeholder="Add a new Task"
-          {...register("title", { required: true, maxLength: 50 })}
+          onChange={handleChangeTitle}
         />
-        <p className="text-danger">
-          {errors.title?.type === "required" && "Task is required"}
-        </p>
       </Form.Group>
       <Form.Group className="w-50 me-1" controlId="description">
         <Form.Control
           type="text"
           placeholder="Add a description"
-          {...register("description", { required: true, maxLength: 50 })}
+          onChange={handleChangeDescription}
         />
-        <p className="text-danger">
-          {errors.description?.type === "required" && "Description is required"}
-        </p>
       </Form.Group>
-      <Button variant="light" type="submit" className="h-75">
-        <img
-          srcSet="https://cdn-icons-png.flaticon.com/512/463/463569.png"
-          alt="icon"
-          width="30"
-          height="30"
-          className="shadow rounded-circle align-self-center"
-        />
+      <Button variant="primary" type="submit">
+        <BsPlusLg />
       </Button>
     </Form>
   );
