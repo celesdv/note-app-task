@@ -1,0 +1,18 @@
+.nav-Bar {
+  margin: 3vh 5vh;
+  text-align: center;
+}
+
+.brand {  
+  font-size: 45px;
+  line-height: 50px;
+}
+
+.icon{
+    font-size: 65px;
+}
+
+.letter {
+  font-family: "La Belle Aurore", cursive;
+  font-size: 50px;
+}

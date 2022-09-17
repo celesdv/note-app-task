@@ -1,0 +1,18 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Nunito', sans-serif;
+  background: rgb(249, 121, 146);
+  background: radial-gradient(
+    circle,
+    rgba(249, 121, 146, 1) 0%,
+    rgba(35, 27, 66, 1) 100%
+  );
+  background-attachment: fixed;
+}
+
+.App {
+  width: 575px;
+  margin: auto;
+  color: #e6e1cd;
+}

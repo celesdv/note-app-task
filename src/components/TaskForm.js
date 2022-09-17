@@ -1,8 +1,7 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { BsPlusLg } from "react-icons/bs";
+import "../styles/TaskForm.css";
+import { MdAdd } from "react-icons/md";
 
 const TaskForm = ({ saveTask }) => {
   const [title, setTitle] = useState("");
@@ -31,25 +30,28 @@ const TaskForm = ({ saveTask }) => {
   };
 
   return (
-    <Form className="d-flex flex-row mb-2" onSubmit={handleSubmit}>
-      <Form.Group className="w-50 m-2 shadow" controlId="title">
-        <Form.Control
-          type="text"
-          placeholder="Add a new Task"
-          onChange={handleChangeTitle}
-        />
-      </Form.Group>
-      <Form.Group className="w-50 m-2 shadow" controlId="description">
-        <Form.Control
-          type="text"
-          placeholder="Add a description"
-          onChange={handleChangeDescription}
-        />
-      </Form.Group>
-      <Button variant="primary" type="submit" className="shadow m-2">
-        <BsPlusLg />
-      </Button>
-    </Form>
+    <div>
+      <h3 className="title">Add Tasks</h3>
+      <form onSubmit={handleSubmit} className="form">
+        <div className="inputs">
+          <input
+            className="inputForm"
+            type="text"
+            placeholder="Add a new Task"
+            onChange={handleChangeTitle}
+          />
+          <input
+            className="inputForm"
+            type="text"
+            placeholder="Add a Description"
+            onChange={handleChangeDescription}
+          />
+        </div>
+        <button className="buttonAdd">
+          <MdAdd className="iconForm" />
+        </button>
+      </form>
+    </div>
   );
 };
 
