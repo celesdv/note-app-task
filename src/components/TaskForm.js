@@ -47,7 +47,7 @@ const TaskForm = ({ saveTask }) => {
             onChange={handleChangeDescription}
           />
         </div>
-        <button className="buttonAdd">
+        <button className="bttn-form">
           <MdAdd className="iconForm" />
         </button>
       </form>

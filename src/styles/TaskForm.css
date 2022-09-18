@@ -1,5 +1,6 @@
 .title{
     margin: 5px;
+    color: #e6e1cd;
 }
 
 .form {
@@ -8,49 +9,48 @@
 
 .inputs {
   padding: 1%;
+  background: transparent;
 }
 
 .inputForm {
   width: 100%;
   padding: 12px;
-  margin-bottom: 5px;
+  margin-bottom: 2%;
   font-size: 20px;
-  border: 2px solid #e6e1cd;
+  border: 2px solid #d6b3b1;
   border-radius: 4px;
   box-sizing: border-box;
   background: #d6b3b1;
 }
 
 .inputForm:focus {
-  background: #e6e1cd;
   color: #231b42;
-  border: 2px solid #f97992;
+  border: 3px solid #f97992;
 }
 
 .inputForm:hover {
-  background: #e6e1cd;
   color: #231b42;
-  border: 2px solid #f97992;
+  border: 3px solid #f97992;
 }
 
-.buttonAdd {
+.bttn-form {
   align-self: center;
   padding: 1%;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: #d6b3b1;
   border: none;
   border-radius: 4px;
   color: #231b42;
 }
 
-.buttonAdd:hover {
+.bttn-form:hover {
   background: #231b42;
   color: #d6b3b1;
 }
 
 .iconForm {  
-  width: 98%;
-  height: 98%;
+  width: 96%;
+  height: 96%;
   background: transparent;
 }
